@@ -11,6 +11,8 @@ $(document).ready(function() {
    // adds a class to output tag to turn color red if the number remaining is less then 0
    if (remainChars < 0) {
      counter.addClass('negative-count');
+   } else {
+     counter.removeClass('negative-count');
    }
  });
 });
