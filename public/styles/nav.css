@@ -1,0 +1,27 @@
+.nav-div {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 120px;
+  background-color: #4056A1;
+  color: #fff;
+  padding:1.5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-title{
+  font-family: 'Bungee', cursive, sans-serif;
+}
+
+.write-tweet {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.down-arrow {
+  text-align: center;
+  color: red;
+}
+
+
