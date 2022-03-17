@@ -1,0 +1,38 @@
+.container{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #54514970;
+ }
+
+ #tweet-text {
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid black;
+  background-color: #f4f1ec;
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+}
+
+.submit-tweet {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4056A1;
+  color: #fff;
+}
+
+.counter {
+  float: right;
+}
+
+.negative-count {
+  color: red;
+}
