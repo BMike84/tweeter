@@ -5,9 +5,9 @@
   flex-direction: column;
 }
 
-label {
+/* label {
   color: #54514970;
- }
+ } */
 
  #tweet-text {
   margin: 0 auto;
