@@ -1,12 +1,19 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .nav-div {
   font-family: 'Source Sans Pro', sans-serif;
   height: 120px;
   background-color: #4056A1;
   color: #fff;
-  padding:1.5em;
+  padding: 1.5em;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav-title{
@@ -14,6 +21,7 @@
 }
 
 .write-tweet {
+  padding-top: 0.4em;
   font-size: 18px;
   display: flex;
   flex-direction: column;
