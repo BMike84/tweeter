@@ -1,0 +1,63 @@
+/* article section of tweets */
+
+.article-tweets {
+  border: 3px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.article-tweets:hover {
+  box-shadow: 5px 8px #4747da46;;
+}
+
+/* article header section */
+.article-tweets > header {
+  display: flex;
+  justify-content: space-between;
+  color: #545149ad;
+  margin: 0;
+}
+
+header > .user {
+  display: flex;
+  align-items: center;
+}
+
+.user > span {
+  padding-right: 5px;
+}
+
+.user > p, header > p {
+  font-weight: 100;
+}
+
+/* article tweet */
+.tweet > p {
+  margin-bottom: 30px;
+  padding:0 10px;
+}
+
+/* to have a border line */
+.border {
+  border-top: 3px solid black;
+  margin-bottom: 10px;
+}
+
+/* article footer section */
+.article-tweets > footer {
+  margin-bottom: 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.right-footer > i {
+  padding: 0 3px;
+  color: #3f3fd8;
+}
+
+.right-footer > i:hover{
+  color: rgb(201, 148, 49);
+}
+
