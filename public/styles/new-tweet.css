@@ -1,17 +1,6 @@
-#container{
-  margin: 0 auto;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  background-color: #f4f1ec;
-}
-
 .new-tweet {
   margin-bottom: 30px;
 }
-/* label {
-  color: #54514970;
- } */
 
  #tweet-text {
   margin: 0 auto;
