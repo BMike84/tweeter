@@ -1,5 +1,7 @@
 .new-tweet {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
  #tweet-text {
@@ -14,6 +16,8 @@
 }
 
 .submit-tweet {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -22,9 +26,6 @@ button {
   color: #fff;
 }
 
-.counter {
-  float: right;
-}
 
 .negative-count {
   color: red;
