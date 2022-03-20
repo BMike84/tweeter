@@ -70,19 +70,16 @@ $(document).ready(function() {
     return $tweet
   }
 
-  // renderTweets(data);
-
 // for submission
- $("#form-tweet").submit(function(event) {
-  console.log('Event called');
-  event.preventDefault();
-  $.ajax("/tweets", { method: 'Post', data: $(this).serialize()});
-  console.log($(this).serialize())
- });
+const submitTweet = function () {
+  $("#form-tweet").submit(function(event) {
+    // console.log('Event called');
+    event.preventDefault();
+    $.ajax("/tweets", { method: 'Post', data: $(this).serialize()});
+    // console.log($(this).serialize())
+   });
+}
 
-//  $("#tweet-btn").click(function() {
-//   $("#form-tweet").submit();
-//  });
 
 
 //load tweets
@@ -91,6 +88,7 @@ const loadTweets = function () {
   $.ajax("/tweets", { method: 'GET' })
   .then(function (tweets) {
     // console.log('Success: ', tweets);
+    submitTweet();
     renderTweets(tweets);
   })
 }
