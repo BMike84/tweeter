@@ -15,6 +15,10 @@
   outline: none;
 }
 
+#form-tweet > label {
+  color: #2421217b;
+}
+
 .submit-tweet {
   display: flex;
   justify-content: space-between;
