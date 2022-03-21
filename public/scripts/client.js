@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
 $(document).ready(function() {
 
   const renderTweets = function(tweets) {
@@ -37,7 +12,7 @@ $(document).ready(function() {
     // takes return value and appends it to the tweets container
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   }
 
@@ -69,30 +44,48 @@ $(document).ready(function() {
         `);
     return $tweet
   }
+ 
+   // form submission
+    $("#form-tweet").submit(function(event) {
+      // console.log('Event called');
+      event.preventDefault();
 
-// for submission
-const submitTweet = function () {
-  $("#form-tweet").submit(function(event) {
-    // console.log('Event called');
-    event.preventDefault();
-    $.ajax("/tweets", { method: 'Post', data: $(this).serialize()});
-    // console.log($(this).serialize())
-   });
-}
+      //checking for errors
+      //checking for text area using id='tweet-text'
+      if (!$(this).find("#tweet-text").val()) {
+        console.log('Failed 0 characters')
+        return alert('Please add some characters before submitting');
+      }
+  
+      if ($(this).find("#tweet-text").val().length > 140) {
+        console.log('Failed exceeded 140 characters')
+        return alert("You've exceeeded the 140 characters allowed!")
+      }
+      
+      // if ($(this).find("#tweet-text").val().length <= 140 && $(this).find("#tweet-text").val().length > 0) {
+         // submits to tweets database
+        $.ajax("/tweets", { 
+          method: 'Post', 
+          data: $(this).serialize()
+        }).then(function() {
+          loadTweets()
+        })
+      // }
+     
+    });
 
+  //load tweets
+  const loadTweets = function () {
+    // using a get request to search the  page for all tweets
+    $.ajax("/tweets", { method: 'GET' })
+    .then(function (tweets) {
+    console.log('Success: ', tweets);
+      renderTweets(tweets);
+    });
+  };
+  
+  // load tweets   
+  loadTweets();
+ 
 
-
-//load tweets
-const loadTweets = function () {
-  // using a get request to search the  page for all tweets
-  $.ajax("/tweets", { method: 'GET' })
-  .then(function (tweets) {
-    // console.log('Success: ', tweets);
-    submitTweet();
-    renderTweets(tweets);
-  })
-}
-
-loadTweets();
-
-})
+});
