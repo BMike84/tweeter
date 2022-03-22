@@ -35,3 +35,13 @@ button {
   color: red;
 }
 
+/* Error Text */
+
+.error {
+  display: none;
+  color: red;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 3px solid red;
+  text-align: center;
+}
