@@ -6,6 +6,12 @@
 
 $(document).ready(function() {
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -15,25 +21,25 @@ $(document).ready(function() {
     for (const tweet of tweets) {
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
-  }
+  };
 
   const createTweetElement = function(tweet) {
     const $tweet = (`
         <article class="article-tweets">
           <header>
             <div class="user">
-            <img src="${tweet.user.avatars}" alt="">
-              <p>${tweet.user.name}</p>
+            <img src="${escape(tweet.user.avatars)}" alt="">
+              <p>${escape(tweet.user.name)}</p>
             </div>
-            <p>${tweet.user.handle}</p>
+            <p>${escape(tweet.user.handle)}</p>
           </header>
           <div class="tweet">
-            <p>${tweet.content.text}</p>
+            <p>${escape(tweet.content.text)}</p>
             <div class="border"></div>
           </div>
           <footer>
             <div class="left-footer">
-              <span>${timeago.format(tweet.created_at)}</span>
+              <span>${escape(timeago.format(tweet.created_at))}</span>
             </div>
             <div class="right-footer">
               <i class="fa-solid fa-flag"></i>
@@ -43,49 +49,52 @@ $(document).ready(function() {
           </footer>
         </article>
         `);
-    return $tweet
-  }
+    return $tweet;
+  };
  
-   // form submission
+  // form submission
   $("#form-tweet").submit(function(event) {
     // console.log('Event called');
     event.preventDefault();
 
     //checking for errors
+    $('.error').slideUp();
+
     //checking for text area using id='tweet-text'
     if (!$(this).find("#tweet-text").val()) {
-      console.log('Failed 0 characters')
-      return alert('Please add some characters before submitting');
+      console.log('Failed 0 characters');
+      // return alert('Please add some characters before submitting');
+      return $('.error').text("❌ Please add some characters before submitting ❌").slideDown();
     }
 
     if ($(this).find("#tweet-text").val().length > 140) {
-      console.log('Failed exceeded 140 characters')
-      return alert("You've exceeeded the 140 characters allowed!")
+      // console.log('Failed exceeded 140 characters')
+      // return alert("You've exceeeded the 140 characters allowed!")
+      return $('.error').text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
     }
     
     // submits to tweets database
-    $.ajax("/tweets", { 
-      method: 'Post', 
+    $.ajax("/tweets", {
+      method: 'Post',
       data: $(this).serialize()
     }).then(function() {
       $("#tweet-text").val('');
       $(".counter").text(140);
-      loadTweets()
-    })
-    
+      loadTweets();
+    });
+
   });
 
   //load tweets
-  const loadTweets = function () {
+  const loadTweets = function() {
     // using a get request to search the  page for all tweets
     $.ajax("/tweets", { method: 'GET' })
-    .then(function (tweets) {
-    // console.log('Success: ', tweets);
-    renderTweets(tweets);
-    });
+      .then(function(tweets) {
+        renderTweets(tweets);
+      });
   };
   
-  // load tweets   
+  // load tweets
   loadTweets();
 
 });
