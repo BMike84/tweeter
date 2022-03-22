@@ -6,7 +6,8 @@
 
 .nav-div {
   height: 120px;
-  background-color: #4056A1;
+  background-color: #4056a1;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   color: #fff;
   padding: 1.5em;
   width: 100%;
@@ -19,17 +20,14 @@
   font-family: 'Bungee', cursive, sans-serif;
 }
 
-.write-tweet {
-  padding-top: 0.4em;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
+.nav-btn, .nav-btn2 {
+  padding: 10px;
+  background-color: #ed522b;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   cursor: pointer;
 }
 
-.down-arrow {
-  text-align: center;
-  color: red;
+.hide {
+  display: none;
 }
-
 
