@@ -5,7 +5,6 @@
 }
 
 .nav-div {
-  font-family: 'Source Sans Pro', sans-serif;
   height: 120px;
   background-color: #4056A1;
   color: #fff;
@@ -30,6 +29,11 @@
 .down-arrow {
   text-align: center;
   color: red;
+  /* animation : updown 2s infinite; */
 }
 
-
+/* @keyframes updown {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); } 
+} */
