@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('html, body').animate({
       // - 200 makes it appear properly instead of bottom of container
       scrollTop: $("#container").offset().top - 200
-    }, 1000);
+    }, 500);
   });
   //when clicking second button returns to first button
   $('.nav-btn2').on('click', function() {
@@ -23,15 +23,19 @@ $(document).ready(function() {
   // scroll page
   $(document).scroll(function(){
 
-    const position = $(window).scrollTop()
+    const position = $(window).scrollTop();
+
     if(position > 120){
       $('.scroll-btn').removeClass('hide');
-      $('.scroll-btn').on('click', function(){
-        $(window).scrollTop(0);
-        $('.scroll-btn').addClass('hide');
-      });
     } else {
       $('.scroll-btn').addClass('hide');
     }
   });
+
+  // gives a smooth scroll
+  $('.scroll-btn').on('click', function(){
+    $('html').animate({scrollTop: 0}, 500);
+    $('.scroll-btn').removeClass('hide');
+  });
+
 })
