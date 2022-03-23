@@ -1,7 +1,8 @@
 .main-header {
+  /* position: relative; */
   height: 400px;
   width: 100%;
-  margin-top: 120px;
+  /* margin-top: 120px; */
   color: #fff;
   background-color: #00b31b;
   background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
@@ -11,14 +12,6 @@
   align-items: center;
 }
 
-.nav-title {
-  font-size: 28px;
-}
-
-.write-tweet {
-  font-size: 22px;
-}
-
-.write-tweet > span {
-  padding-bottom: 5px;
+header > div > h2 {
+  margin-top: 0px;
 }

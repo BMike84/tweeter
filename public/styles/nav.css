@@ -1,13 +1,19 @@
 #navbar {
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
+  font-size: 1.2em;
+  border: none;
 }
 
 .nav-div {
   height: 120px;
-  background-color: #4056a1;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-color: #00b31b;
+  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+  /* background-color for tablet and up */
+  /* background-color: #4056a1;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
   color: #fff;
   padding: 1.5em;
   width: 100%;
