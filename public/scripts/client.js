@@ -17,9 +17,9 @@ $(document).ready(function() {
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     //.empty() makes sure i dont get duplicate tweets when submitting
-    $('#tweets-container').empty();
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
-      $('#tweets-container').prepend(createTweetElement(tweet));
+      $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
 
@@ -54,31 +54,26 @@ $(document).ready(function() {
  
   // form submission
   $("#form-tweet").submit(function(event) {
-    // console.log('Event called');
     event.preventDefault();
 
     //checking for errors
-    $('.error').slideUp();
+    $(".error").slideUp();
 
-    //checking for text area using id='tweet-text'
+    //checking for text area using id="tweet-text"
     if (!$(this).find("#tweet-text").val()) {
-      console.log('Failed 0 characters');
-      // return alert('Please add some characters before submitting');
-      return $('.error').text("❌ Please add some characters before submitting ❌").slideDown();
+      return $(".error").text("❌ Please add some characters before submitting ❌").slideDown();
     }
 
     if ($(this).find("#tweet-text").val().length > 140) {
-      // console.log('Failed exceeded 140 characters')
-      // return alert("You've exceeeded the 140 characters allowed!")
-      return $('.error').text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
+      return $(".error").text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
     }
     
     // submits to tweets database
     $.ajax("/tweets", {
-      method: 'Post',
+      method: "Post",
       data: $(this).serialize()
     }).then(function() {
-      $("#tweet-text").val('');
+      $("#tweet-text").val("");
       $(".counter").text(140);
       loadTweets();
     });
@@ -88,7 +83,7 @@ $(document).ready(function() {
   //load tweets
   const loadTweets = function() {
     // using a get request to search the  page for all tweets
-    $.ajax("/tweets", { method: 'GET' })
+    $.ajax("/tweets", { method: "GET" })
       .then(function(tweets) {
         renderTweets(tweets);
       });
