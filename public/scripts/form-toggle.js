@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // For Nav Bar
-  // does not display compose tweet
+  // does not display compose tweet when page is loaded
   $(".new-tweet").hide();
   // when clicking first button second button appears
   $(".nav-btn").on("click", function() {
@@ -23,8 +23,10 @@ $(document).ready(function() {
   // scroll page
   $(document).scroll(function() {
 
+    // finds the position of top of page
     const position = $(window).scrollTop();
 
+    // makes scroll to top button only appear after scrolling down 120px
     if (position > 120) {
       $(".scroll-btn").removeClass("hide");
       $("#navbar").addClass("transparent");
