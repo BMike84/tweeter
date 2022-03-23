@@ -1,0 +1,22 @@
+/* Footer */
+footer {
+  margin: 20px auto;
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.scroll-btn {
+ padding: 15px;
+ border: none;
+ border-radius: 100%;
+ color: #fff;
+ background-color: rgba(255, 7, 7, 0.591);
+ cursor: pointer;
+ position: fixed;
+ bottom: 0;
+}
+
+.scroll-btn:hover {
+  background-color: rgb(255, 7, 7);
+}
