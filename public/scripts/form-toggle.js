@@ -27,8 +27,10 @@ $(document).ready(function() {
 
     if(position > 120){
       $('.scroll-btn').removeClass('hide');
+      $('#navbar').addClass('transparent')
     } else {
       $('.scroll-btn').addClass('hide');
+      $('#navbar').removeClass('transparent')
     }
   });
 
