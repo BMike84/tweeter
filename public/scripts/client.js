@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready( () => {
+$(document).ready(() => {
 
   const escape = str => {
     let div = document.createElement("div");
@@ -53,46 +53,52 @@ $(document).ready( () => {
   };
  
   // form submission
-  $("#form-tweet").submit(function(event) {
-    event.preventDefault();
+  const formSubmit = () => {
+    $("#form-tweet").submit(function(event) {
+      event.preventDefault();
 
-    //checking for errors
-    $(".error").slideUp();
+      //checking for errors
+      $(".error").slideUp();
 
-    // checking for text area using id="tweet-text"
-    // If no characters were added while submitting tweet
-    if (!$(this).find("#tweet-text").val()) {
-      return $(".error").text("❌ Please add some characters before submitting ❌").slideDown();
-    }
+      // checking for text area using id="tweet-text"
+      // If no characters were added while submitting tweet
+      if (!$(this).find("#tweet-text").val()) {
+        return $(".error").text("❌ Please add some characters before submitting ❌").slideDown();
+      }
 
-    // If characters exceeded 140 you get a error
-    if ($(this).find("#tweet-text").val().length > 140) {
-      return $(".error").text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
-    }
-    
-    // submits to tweets database
-    $.ajax("/tweets", {
-      method: "Post",
-      data: $(this).serialize()
-    })
-    // This renders the tweets without having to refresh page
-      .then(() => {
-        $("#tweet-text").val("");
-        $(".counter").text(140);
-        loadTweets();
+      // If characters exceeded 140 you get a error
+      if ($(this).find("#tweet-text").val().length > 140) {
+        return $(".error").text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
+      }
+      
+      // submits to tweets database
+      $.ajax("/tweets", {
+        method: "Post",
+        data: $(this).serialize()
       })
-      .catch((err) => {
-        console.log("Error:", err);
-      });
+      // This renders the tweets without having to refresh page
+        .then(() => {
+          $("#tweet-text").val("");
+          $(".counter").text(140);
+          loadTweets();
+        })
+        .catch(err => {
+          console.log("Error: ", err);
+        });
+    });
+  };
 
-  });
-
+  formSubmit();
+  
   //load tweets
   const loadTweets = () => {
     // using a get request to search the  page for all tweets
     $.ajax("/tweets", { method: "GET" })
       .then((tweets) => {
         renderTweets(tweets);
+      })
+      .catch(err => {
+        console.log("Error: ", err);
       });
   };
   
