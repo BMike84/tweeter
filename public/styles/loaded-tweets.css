@@ -38,6 +38,7 @@ header > .user {
 .tweet > p {
   margin-bottom: 30px;
   padding:0 10px;
+  width: 100%;
 }
 
 /* to have a border line */
