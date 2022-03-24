@@ -1,6 +1,6 @@
 /* profile pic and name of main user */
 .main-header {
-  height: 450px;
+  height: 400px;
   width: 100%;
   color: #fff;
   padding: 140px 0 20px 0;
@@ -14,4 +14,5 @@
 
 header > div > h2 {
   margin-top: 0px;
+  padding-bottom: 30PX;
 }
