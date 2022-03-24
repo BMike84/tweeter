@@ -13,16 +13,16 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
     //.empty() makes sure i dont get duplicate tweets when submitting
-    $("#tweets-container").empty();
-    for (const tweet of tweets) {
-      $("#tweets-container").prepend(createTweetElement(tweet));
-    }
+    const tweetContainer = $("#tweets-container");
+    tweetContainer.empty();
+    tweets.forEach(tweet => {
+      const value = createTweetElement(tweet);
+      tweetContainer.prepend(value);
+    });
   };
 
+  //creates loaded tweets section
   const createTweetElement = function(tweet) {
     const $tweet = (`
         <article class="article-tweets">
@@ -59,11 +59,13 @@ $(document).ready(function() {
     //checking for errors
     $(".error").slideUp();
 
-    //checking for text area using id="tweet-text"
+    // checking for text area using id="tweet-text"
+    // If no characters were added while submitting tweet 
     if (!$(this).find("#tweet-text").val()) {
       return $(".error").text("❌ Please add some characters before submitting ❌").slideDown();
     }
 
+    // If characters exceeded 140 you get a error
     if ($(this).find("#tweet-text").val().length > 140) {
       return $(".error").text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
     }
