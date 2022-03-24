@@ -1,9 +1,8 @@
-$(document).ready(function() {
-  // For Nav Bar
-  // does not display compose tweet when page is loaded
+// For Nav Bar does not display compose tweet when page is loaded
+const composeButton = () => {
   $(".new-tweet").hide();
   // when clicking first button second button appears
-  $(".nav-btn").on("click", function() {
+  $(".nav-btn").on("click", () => {
     $(".new-tweet").slideDown();
     $(".nav-btn").addClass("hide");
     $(".nav-btn2").removeClass("hide");
@@ -19,8 +18,11 @@ $(document).ready(function() {
     $(".nav-btn2").addClass("hide");
     $(".nav-btn").removeClass("hide");
   });
+};
+composeButton();
 
-  // scroll page
+// Used for scrolling page
+const scrollPage = () => {
   $(document).scroll(function() {
 
     // finds the position of top of page
@@ -41,5 +43,10 @@ $(document).ready(function() {
     $("html").animate({scrollTop: 0}, 500);
     $(".scroll-btn").removeClass("hide");
   });
+};
+scrollPage();
 
+$(document).ready(() => {
+  composeButton();
+  scrollPage();
 });
