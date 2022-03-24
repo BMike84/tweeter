@@ -1,11 +1,10 @@
 .main-header {
-  /* position: relative; */
-  height: 400px;
+  height: 450px;
   width: 100%;
-  /* margin-top: 120px; */
   color: #fff;
-  background-color: #00b31b;
-  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+  padding: 110px 0 20px 0;
+  background-color: #213d00;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
