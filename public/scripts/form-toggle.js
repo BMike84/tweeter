@@ -27,7 +27,7 @@ $(document).ready(function() {
     const position = $(window).scrollTop();
 
     // makes scroll to top button only appear after scrolling down 120px
-    if (position > 120) {
+    if (position > 30) {
       $(".scroll-btn").removeClass("hide");
       $("#navbar").addClass("transparent");
     } else {
