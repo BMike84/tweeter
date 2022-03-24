@@ -1,22 +1,15 @@
 /* tablets  */
 @media only screen and (min-width: 768px) {
   #navbar {
-    font-size: 1.9em;
-  }
-
-  .nav-div {
     background-color: #4056a1;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-    height: 90px;
+    height: 80px;
   }
 }
 /* Laptops */
 @media only screen and (min-width: 992px) {
-
-  .nav-div {
-    /* background-color: #4056a1;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); */
-    height: 90px;
+  body {
+    padding-top: 90px;
   }
   
   #large-container {
@@ -29,6 +22,8 @@
 
   .main-header {
     width: 35%;
+    border-radius: 20%;
+    padding: 0;
   }
 
   #container {
