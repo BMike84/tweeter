@@ -1,18 +1,16 @@
 /* tablets  */
 @media only screen and (min-width: 768px) {
-  #navbar {
-    background-color: #4056a1;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  }
-
-  #container {
-    width: 85%;
-  }
+  
 }
-/* Laptops */
+/* Laptops  and larger */
 @media only screen and (min-width: 992px) {
   body {
     padding-top: 90px;
+  }
+
+  #navbar {
+    background-color: #4056a1;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   }
   
   #large-container {
@@ -33,7 +31,7 @@
   }
 
   #container {
-    padding-top: 20px;
+    padding-top: 35px;
     margin-right: 0;
     width: 60%;
   }
