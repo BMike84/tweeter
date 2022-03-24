@@ -22,10 +22,11 @@
 
   .main-header {
     width: 28%;
+    height: 70%;
     border-radius: 20%;
     padding: 0;
     position: fixed;
-    top: 150px;
+    top: 140px;
   }
 
   #container {
