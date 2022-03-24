@@ -1,9 +1,11 @@
 /* article section of tweets */
 
 .article-tweets {
+  margin: 0 auto;
   border: 3px solid black;
   padding: 15px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .article-tweets:hover {
@@ -32,6 +34,7 @@ header > .user {
 }
 
 /* article tweet */
+
 .tweet > p {
   margin-bottom: 30px;
   padding:0 10px;
