@@ -38,6 +38,8 @@ header > .user {
 .tweet > p {
   margin-bottom: 30px;
   width: 100%;
+  /* if word exceeds box limits this makes sure it stays in container */
+  word-break: break-all;
 }
 
 /* to have a border line */
