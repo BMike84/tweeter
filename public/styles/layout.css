@@ -15,11 +15,9 @@
  */
 
 body {
-  padding-top: 90px;
+  /* padding-top: 90px; */
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
-  /* font-family: 'Bungee', cursive, sans-serif; */
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
 }
@@ -28,7 +26,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* main container for tweets */
+
+ /* main container for tweets section */
 
  #container{
   margin: 20px auto 0 auto;
