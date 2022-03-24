@@ -4,15 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready( () => {
 
-  const escape = function(str) {
+  const escape = str => {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = tweets => {
     //.empty() makes sure i dont get duplicate tweets when submitting
     const tweetContainer = $("#tweets-container");
     tweetContainer.empty();
@@ -23,7 +23,7 @@ $(document).ready(function() {
   };
 
   //creates loaded tweets section
-  const createTweetElement = function(tweet) {
+  const createTweetElement = tweet => {
     const $tweet = (`
         <article class="article-tweets">
           <header>
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $(".error").slideUp();
 
     // checking for text area using id="tweet-text"
-    // If no characters were added while submitting tweet 
+    // If no characters were added while submitting tweet
     if (!$(this).find("#tweet-text").val()) {
       return $(".error").text("❌ Please add some characters before submitting ❌").slideDown();
     }
@@ -74,19 +74,24 @@ $(document).ready(function() {
     $.ajax("/tweets", {
       method: "Post",
       data: $(this).serialize()
-    }).then(function() {
-      $("#tweet-text").val("");
-      $(".counter").text(140);
-      loadTweets();
-    });
+    })
+    // This renders the tweets without having to refresh page
+      .then(() => {
+        $("#tweet-text").val("");
+        $(".counter").text(140);
+        loadTweets();
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+      });
 
   });
 
   //load tweets
-  const loadTweets = function() {
+  const loadTweets = () => {
     // using a get request to search the  page for all tweets
     $.ajax("/tweets", { method: "GET" })
-      .then(function(tweets) {
+      .then((tweets) => {
         renderTweets(tweets);
       });
   };
