@@ -3,7 +3,7 @@
 Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
-Mobile
+Mobile and tablet
 
 ![Mobile"](public/images/mobile.png)
 
@@ -11,7 +11,7 @@ Desktop
 !["Desktop"](public/images/desktop-load.png)
 
 
-Desktop Scrolled 
+Desktop Scrolled with tweet opened 
 !["Desktop when scrolled and compose tweet opened"](public/images/desktop-scroll.png)
 
 ## Features
