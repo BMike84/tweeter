@@ -2,19 +2,6 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-## Final Product
-Mobile Tablet
-
-![Alt text](public/images/mobile-tablet.png)
-
-Desktop Upon Load
-
-![Alt text](public/images/desktop-load.png)
-
-Desktop after scroll with tweet open
-
-![Alt text](public/images/scroll-desktop.png)
-
 ## Features
 * Click write tweet to toggle open and close compose tweet section
 * Write tweet down arrow scrolls to section of page
