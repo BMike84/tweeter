@@ -5,14 +5,14 @@ Tweeter is a simple, single-page Twitter clone.
 ## Final Product
 Mobile
 
-![Mobile"](public/images/Mobile.png)
+![Mobile"](public/images/mobile.png)
 
 Desktop
-!["Desktop"](public/images/Desktop.png)
+!["Desktop"](public/images/desktop-load.png)
 
 
 Desktop Scrolled 
-!["Desktop when scrolled and compose tweet opened"](public/images/Desktop-Scroll.png)
+!["Desktop when scrolled and compose tweet opened"](public/images/desktop-scroll.png)
 
 ## Features
 * Dynamic character counter to show how many characters left of 140.
