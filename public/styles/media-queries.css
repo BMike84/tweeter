@@ -1,6 +1,8 @@
 /* tablets  */
 @media only screen and (min-width: 768px) {
-  
+  #navbar {
+    font-size: 1.2em;
+  }
 }
 /* Laptops  and larger */
 @media only screen and (min-width: 1024px) {
@@ -23,11 +25,14 @@
 
   .main-header {
     width: 28%;
-    height: 70%;
-    border-radius: 20%;
+    height: 52%;
     padding: 0;
     position: fixed;
     top: 140px;
+  }
+
+  .header-img {
+   padding-top: 50px;
   }
 
   #container {
