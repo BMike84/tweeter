@@ -1,11 +1,6 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// so document loads first so then we can use jquery
 $(document).ready(() => {
-
+  // This prevents user from typing malware into compose tweets section
   const escape = str => {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -71,7 +66,7 @@ $(document).ready(() => {
         return $(".error").text("❌ You've exceeeded the 140 characters allowed! ❌").slideDown();
       }
       
-      // submits to tweets database
+      // submits to tweets database using ajax
       $.ajax("/tweets", {
         method: "Post",
         data: $(this).serialize()
