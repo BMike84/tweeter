@@ -20,10 +20,24 @@
 }
 
 .nav-btn, .nav-btn2 {
-  padding: 7px 10px;
-  background-color: #ed522b;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 13px;
+  border: none;
+  background: none;
   cursor: pointer;
+}
+
+
+.arrow {
+  color: #ed522b;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+
+.arrow:hover {
+  transform: translateY(5px);
 }
 
 .hide {
