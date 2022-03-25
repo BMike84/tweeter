@@ -15,6 +15,12 @@ Desktop after scroll with tweet open
 
 ![Alt text](public/images/scroll-desktop.png)
 
+## Features
+* Click write tweet to toggle open and close compose tweet section
+* Write tweet down arrow scrolls to section of page
+* Scroll to top button appears after you scroll
+* Dynamic counter for compose tweet section
+
 ## Getting Started
 
 1. Fork and clone your repository onto your local device.
